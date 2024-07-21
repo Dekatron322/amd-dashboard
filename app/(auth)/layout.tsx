@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       {
         width: 1200,
         height: 630,
-        url: "https://raw.githubusercontent.com/Dekatron322/amd-dashboard/main/public/venus.png",
+        url: "https://raw.githubusercontent.com/Dekatron322/amd-dashboard/main/public/venus.png?token=GHSAT0AAAAAACSXKXAZP2KPMRTJS6WATSS6ZU5PHZQ",
       },
     ],
   },
