@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import MoreVertIcon from "@mui/icons-material/MoreVert"
 import ReceiptModal from "components/Modals/ViewReceiptModal"
 import { useRouter } from "next/navigation"
@@ -17,6 +17,7 @@ interface CustomTableProps {
 }
 
 export default function CustomTable({ columns, data, showDropdown = true, tableType }: CustomTableProps) {
+  const router = useRouter()
   const [sortBy, setSortBy] = useState<string | null>(null)
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc")
   const [searchQuery, setSearchQuery] = useState("")
@@ -75,14 +76,12 @@ export default function CustomTable({ columns, data, showDropdown = true, tableT
 
   const handleViewReceipt = (event: React.MouseEvent<HTMLButtonElement>, receiptData: any) => {
     event.stopPropagation()
-    console.log("Opening receipt modal with data:", receiptData) // Debug log
     setSelectedReceiptData(receiptData)
     setIsReceiptModalOpen(true)
   }
 
   const handleViewMaintenance = (event: React.MouseEvent<HTMLButtonElement>, receiptData: any) => {
     event.stopPropagation()
-    console.log("Opening receipt modal with data:", receiptData) // Debug log
     setSelectedReceiptData(receiptData)
     setIsMaintenanceModalOpen(true)
   }
@@ -90,7 +89,6 @@ export default function CustomTable({ columns, data, showDropdown = true, tableT
   const paginatedData = filteredData.slice(0, itemsPerPage)
 
   const renderDropdownOptions = (index: number, row: any) => {
-    const router = useRouter()
     if (tableType === "estate") {
       return (
         <div className="absolute right-0 z-10 mt-2 w-48 rounded-md bg-white shadow-lg">

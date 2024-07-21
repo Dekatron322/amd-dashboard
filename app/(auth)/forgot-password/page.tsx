@@ -92,7 +92,7 @@ const Page: React.FC = () => {
             </form>
 
             <div className="mt-2 flex justify-center gap-1">
-              <p className="text-xs text-[#044982]">Don't have an Account </p>
+              <p className="text-xs text-[#044982]">Don&apos;t have an Account </p>
               <Link href="/signup" className="text-xs text-[#EEC202] underline">
                 Create Account
               </Link>
