@@ -159,7 +159,7 @@ const Page: React.FC = () => {
 
             <div className="mt-2 flex justify-center gap-1">
               <p className="text-xs text-[#044982]">Already have an Account </p>
-              <Link href="/signin" className="text-xs text-[#EEC202] underline">
+              <Link href="/" className="text-xs text-[#EEC202] underline">
                 Sign In
               </Link>
             </div>
