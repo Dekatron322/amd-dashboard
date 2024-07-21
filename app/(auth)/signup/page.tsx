@@ -63,7 +63,7 @@ const Page: React.FC = () => {
     <>
       <div className="flex h-screen w-full items-center justify-center bg-[#22266A]">
         <div
-          className="auth flex rounded-[20px] bg-[#FFFFFF] max-sm:w-[95%] xl:max-w-[434px]"
+          className="auth flex rounded-[20px] bg-[#FFFFFF] max-sm:mb-40 max-sm:w-[95%] xl:max-w-[434px]"
           data-aos="fade-up"
           data-aos-duration="1000"
           data-aos-delay="500"
