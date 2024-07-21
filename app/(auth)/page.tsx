@@ -17,7 +17,7 @@ const Page: React.FC = () => {
   const [showErrorNotification, setShowErrorNotification] = useState(false)
   const [isPasswordVisible, setIsPasswordVisible] = useState(false)
 
-  const router = useRouter() // Initialize the router
+  const router = useRouter()
 
   const handleUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(event.target.value)
@@ -37,13 +37,11 @@ const Page: React.FC = () => {
     setError(null)
 
     try {
-      // Simulate an API call or some asynchronous action
       setShowSuccessNotification(true)
       await new Promise((resolve) => setTimeout(resolve, 3000))
 
       setLoading(false)
 
-      // Redirect to the success page
       router.push("/dashboard")
     } catch (error) {
       setError("Failed to sign in. Please try again.")
@@ -61,8 +59,8 @@ const Page: React.FC = () => {
 
   return (
     <>
-      <div className="flex h-screen w-full items-center justify-center bg-[#22266A] ">
-        <div className="auth flex rounded-[20px] bg-[#FFFFFF] max-sm:w-[95%] xl:max-w-[434px]">
+      <div className="flex h-screen w-full items-center justify-center bg-[#22266A]">
+        <div className="auth flex h-auto rounded-[20px] bg-[#FFFFFF]  max-sm:w-[95%] max-sm:items-center xl:max-w-[434px]">
           <div className="w-full justify-center px-[53px] py-[60px] max-sm:px-7">
             <div className="mb-8 flex items-center justify-center">
               <Image src="/AuthImages/amd-logo.png" width={250} height={74} alt="profile" />
@@ -130,7 +128,7 @@ const Page: React.FC = () => {
             </form>
 
             <div className="mt-2 flex justify-center gap-1">
-              <p className="text-xs text-[#044982]">Don&apos;t have an Account </p>
+              <p className="text-xs text-[#044982]">Don&apos;t have an Account</p>
               <Link href="/signup" className="text-xs text-[#EEC202] underline">
                 Create Account
               </Link>
