@@ -53,8 +53,8 @@ export default function CustomTable({ columns, data, showDropdown = true, tableT
   const sortedData = [...data].sort((a, b) => {
     if (!sortBy) return 0
 
-    const aValue = typeof sortBy === "function" ? sortBy(a) : a[sortBy]
-    const bValue = typeof sortBy === "function" ? sortBy(b) : b[sortBy]
+    const aValue = a[sortBy]
+    const bValue = b[sortBy]
 
     if (typeof aValue === "string" && typeof bValue === "string") {
       return sortDirection === "asc" ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue)
