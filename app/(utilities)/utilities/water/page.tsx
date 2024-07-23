@@ -208,9 +208,9 @@ export default function Water() {
           <div className="flex">
             <Sidebar />
 
-            <div className="flex w-full gap-6 max-md:flex-col max-md:px-4 max-md:pt-6 md:mb-16 ">
-              <div className="w-full px-10">
-                <div className="my-7 flex items-center justify-between">
+            <div className="flex w-full gap-6  px-10 max-md:flex-col max-md:pt-6 max-sm:px-0 md:mb-16">
+              <div className="w-full ">
+                <div className="my-7 flex items-center justify-between max-sm:my-2 max-sm:px-4">
                   <h5 className="text-[28px] font-medium">Water</h5>
                   <div className="flex items-center gap-2 ">
                     <p className="opacity-50">Utilities </p>
@@ -218,7 +218,7 @@ export default function Water() {
                     <p className="opacity-50">Dashboard</p>
                   </div>
                 </div>
-                <div className="flex w-full gap-3">
+                <div className="flex h-auto w-full gap-3 max-sm:grid max-sm:grid-cols-2 max-sm:px-4">
                   {PowerUtility.map((account: PaymentAccount, index: number) => (
                     <div key={account.id} className="flex w-full cursor-pointer gap-2">
                       <div
@@ -251,7 +251,7 @@ export default function Water() {
                             )}
                             <p className="text-base font-medium text-white">2.4%</p>
                           </div>
-                          <p className="text-[#707070]">From previous period</p>
+                          <p className="text-[#707070]  max-sm:hidden">From previous period</p>
                         </div>
                       </div>
                     </div>
@@ -259,10 +259,10 @@ export default function Water() {
                 </div>
                 {/* Add the chart component here */}
 
-                <div className="rounded-lg bg-white py-7">
+                <div className="rounded-lg bg-white py-7 max-sm:mt-4 max-sm:py-4">
                   <div className="mb-4 flex items-center justify-between px-6">
                     <div className="flex items-center gap-5">
-                      <div className="flex justify-center gap-2">
+                      <div className="flex justify-center gap-2  max-sm:hidden">
                         <div className="flex h-10 items-center">
                           <p>Show</p>
                         </div>
@@ -284,7 +284,7 @@ export default function Water() {
                           value={searchQuery}
                           onChange={(e) => setSearchQuery(e.target.value)}
                           placeholder="Search..."
-                          className="h-[56px] w-[328px] rounded-md bg-[#F3F3F3] px-3 py-2 outline-none focus:outline-none"
+                          className="h-[56px] w-[328px] rounded-md bg-[#F3F3F3] px-3 py-2 outline-none focus:outline-none max-sm:h-10 max-sm:w-[200px]"
                         />
                       </div>
                     </div>
@@ -292,7 +292,7 @@ export default function Water() {
                       onClick={() => setIsModalOpen(true)}
                       className="button-rounded flex items-center gap-2 rounded-md"
                     >
-                      Change Charges
+                      <p className="max-sm:hidden">Change Charges</p>
                       <Image src="/DashboardImages/settings.svg" width={24} height={24} alt="" />
                     </button>
                   </div>

@@ -111,7 +111,7 @@ export default function Dashboard() {
           <div className="flex">
             <Sidebar />
 
-            <div className="flex w-full gap-6 max-md:flex-col max-md:px-4 max-md:pt-6 md:mb-16 ">
+            <div className="flex w-full gap-6 max-md:flex-col  ">
               <div className="w-full">
                 <AdminMain />
               </div>

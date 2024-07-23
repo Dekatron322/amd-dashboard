@@ -128,6 +128,15 @@ const DashboardNav = () => {
               />
               <p className="mt-1">Rents</p>
             </Link>
+            <Link href="/properties" className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/properties")}`}>
+              <Image
+                src={getNavImageSrc("/properties", "/Icons/Property.svg", "/Icons/Property-active.svg")}
+                width={20}
+                height={20}
+                alt="avatar"
+              />
+              <p className="mt-1">Properties</p>
+            </Link>
             <div
               className={`flex items-center gap-2 pb-4 ${getNavLinkClass("/utilities")}`}
               onClick={toggleUtilities}

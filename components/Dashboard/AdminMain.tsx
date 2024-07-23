@@ -109,10 +109,10 @@ const AdminTab: React.FC = () => {
           <p className="opacity-50">Dashboard</p>
         </div>
       </div>
-      <div className="m-7 rounded-lg bg-white py-4">
+      <div className="rounded-lg bg-white py-4 max-sm:my-4 lg:m-7">
         <div className="mb-4 flex items-center justify-between px-6">
           <div className="flex items-center gap-5">
-            <div className="flex justify-center gap-2">
+            <div className="flex justify-center gap-2 max-sm:hidden">
               <div className="flex h-10 items-center">
                 <p>Show</p>
               </div>
@@ -120,7 +120,7 @@ const AdminTab: React.FC = () => {
                 type="number"
                 value={itemsPerPage}
                 onChange={(e) => setItemsPerPage(Number(e.target.value))}
-                className="h-10 w-[50px] rounded-md bg-[#F3F3F3] px-3 py-2 outline-none focus:outline-none"
+                className="h-10 w-[50px] rounded-md bg-[#F3F3F3] px-3 py-2 outline-none focus:outline-none "
                 placeholder="Items per page"
               />
               <div className="flex h-10 items-center">
@@ -133,12 +133,12 @@ const AdminTab: React.FC = () => {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search..."
-                className="h-[56px] w-[328px] rounded-md bg-[#F3F3F3] px-3 py-2 outline-none focus:outline-none"
+                className="h-[56px] w-[328px] rounded-md bg-[#F3F3F3] px-3 py-2 outline-none focus:outline-none max-sm:h-10 max-sm:w-[200px]"
               />
             </div>
           </div>
           <button onClick={() => setIsModalOpen(true)} className="button-rounded flex items-center gap-2 rounded-md">
-            Add New Admin
+            <p className="max-sm:hidden">Add New Admin</p>
             <Image src="DashboardImages/Vector.svg" width={11.88} height={11.88} alt="" />
           </button>
         </div>
@@ -211,10 +211,10 @@ const RolesTab: React.FC = () => {
           <p className="opacity-50">Dashboard</p>
         </div>
       </div>
-      <div className="m-7 rounded-lg bg-white py-4">
+      <div className="rounded-lg bg-white py-4 max-sm:my-4 lg:m-7">
         <div className="mb-4 flex items-center justify-between px-6">
           <div className="flex items-center gap-5">
-            <div className="flex justify-center gap-2">
+            <div className="flex justify-center gap-2 max-sm:hidden">
               <div className="flex h-10 items-center">
                 <p>Show</p>
               </div>
@@ -235,12 +235,12 @@ const RolesTab: React.FC = () => {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search..."
-                className="h-[56px] w-[328px] rounded-md bg-[#F3F3F3] px-3 py-2 outline-none focus:outline-none"
+                className="h-[56px] w-[328px] rounded-md bg-[#F3F3F3] px-3 py-2 outline-none focus:outline-none max-sm:h-10 max-sm:w-[200px]"
               />
             </div>
           </div>
           <button onClick={() => setIsModalOpen(true)} className="button-rounded flex items-center gap-2 rounded-md">
-            Add New Role
+            <p className="max-sm:hidden">Add New Role</p>
             <Image src="DashboardImages/Vector.svg" width={11.88} height={11.88} alt="" />
           </button>
         </div>

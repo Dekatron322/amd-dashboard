@@ -107,12 +107,12 @@ export default function ServiceCharge() {
           <DashboardNav />
           <div className="flex">
             <Sidebar />
-            <div className="flex w-full gap-6  px-10 max-md:flex-col max-md:px-4 max-md:pt-6 md:mb-16">
+            <div className="flex w-full gap-6  px-10 max-md:flex-col max-md:pt-6 max-sm:px-0 md:mb-16">
               <div className="w-full ">
-                <div className="my-7 flex items-center justify-between">
-                  <h5 className="text-[28px] font-medium">Maintenance Status</h5>
+                <div className="my-7 flex items-center justify-between max-sm:my-2 max-sm:px-4">
+                  <h5 className="text-[28px] font-medium max-sm:text-lg">Maintenance Status</h5>
                   <div className="relative"></div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 max-sm:hidden">
                     <p className="opacity-50">Maintenance Status</p>
                     <KeyboardArrowRightIcon className="opacity-50" />
                     <p className="opacity-50">Dashboard</p>
@@ -121,23 +121,23 @@ export default function ServiceCharge() {
 
                 <div className="rounded-lg bg-white  py-7">
                   <div className="flex w-full gap-1 px-7 pb-5">
-                    <div className="flex h-14 w-[188px] items-center border border-[#ECECEC] bg-[#2D9DFD0D] pl-2 font-medium">
-                      1
+                    <div className="flex h-14 w-[188px] items-center border border-[#ECECEC] bg-[#2D9DFD0D] pl-2 font-medium max-sm:h-8 max-sm:w-auto max-sm:px-1">
+                      <p className="max-sm:text-xs">1</p>
                     </div>
-                    <div className="flex h-14 w-full items-center border border-[#ECECEC] bg-[#2D9DFD0D] pl-2 font-medium">
-                      Musa Umar
+                    <div className="flex h-14 w-full items-center  whitespace-nowrap border border-[#ECECEC] bg-[#2D9DFD0D] pl-2 font-medium max-sm:h-8 max-sm:w-auto max-sm:px-1">
+                      <p className="max-sm:text-xs">Musa Umar</p>
                     </div>
-                    <div className="flex h-14 w-full items-center border border-[#ECECEC] bg-[#2D9DFD0D] pl-2 font-medium">
-                      GHARSGETDU128H
+                    <div className="flex h-14 w-full items-center border border-[#ECECEC] bg-[#2D9DFD0D] pl-2 font-medium max-sm:h-8 max-sm:w-auto max-sm:px-1">
+                      <p className="max-sm:text-xs">GHARSGETDU128H</p>
                     </div>
-                    <div className="flex h-14 w-full items-center border border-[#ECECEC] bg-[#2D9DFD0D] pl-2 font-medium">
-                      House 024
+                    <div className="flex h-14  w-full items-center border border-[#ECECEC] bg-[#2D9DFD0D] pl-2 font-medium max-sm:h-8 max-sm:w-auto max-sm:px-1">
+                      <p className="max-sm:text-xs">024</p>
                     </div>
-                    <div className="flex h-14 w-full items-center border border-[#ECECEC] bg-[#2D9DFD0D] pl-2 font-medium">
-                      27 May, 2024 09:30am
+                    <div className="flex h-14 w-full items-center border border-[#ECECEC] bg-[#2D9DFD0D] pl-2 font-medium max-sm:hidden max-sm:h-8 max-sm:px-1">
+                      <p className="max-sm:text-xs">27 May, 2024 09:30am</p>
                     </div>
-                    <button className="flex h-14 w-full items-center justify-center border border-[#ECECEC] bg-[#044982] pl-2 font-medium text-white">
-                      Grant Access
+                    <button className="flex h-14 w-full items-center justify-center whitespace-nowrap border border-[#ECECEC] bg-[#044982] pl-2 font-medium text-white max-sm:h-8 max-sm:w-auto max-sm:px-2">
+                      <p className="max-sm:text-xs">Grant Access</p>
                     </button>
                   </div>
 

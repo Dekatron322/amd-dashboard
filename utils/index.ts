@@ -627,7 +627,7 @@ export const PowerUtility = [
   },
   {
     id: 4,
-    name: "Total Complaints",
+    name: "Complaints",
     balance: "13",
     status: "income",
   },
