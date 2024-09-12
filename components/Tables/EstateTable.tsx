@@ -3,6 +3,8 @@ import MoreVertIcon from "@mui/icons-material/MoreVert"
 import ReceiptModal from "components/Modals/ViewReceiptModal"
 import { useRouter } from "next/navigation"
 import ViewMaintenanceModal from "components/Modals/ViewMaintenanceModal"
+import DeleteModal from "components/Modals/DeleteModal"
+import Notification from "components/Modals/Notification"
 
 interface Column {
   Header: string
@@ -27,6 +29,9 @@ export default function CustomTable({ columns, data, showDropdown = true, tableT
   const [isReceiptModalOpen, setIsReceiptModalOpen] = useState(false)
   const [selectedReceiptData, setSelectedReceiptData] = useState<any>(null)
   const [isMaintenanceModalOpen, setIsMaintenanceModalOpen] = useState(false)
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
+  const [selectedEstateId, setSelectedEstateId] = useState<string | null>(null)
+  const [notification, setNotification] = useState<{ message: string; type: "success" | "error" } | null>(null)
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -86,6 +91,39 @@ export default function CustomTable({ columns, data, showDropdown = true, tableT
     setIsMaintenanceModalOpen(true)
   }
 
+  const handleDeleteClick = (estateId: string) => {
+    console.log("Selected Estate ID:", estateId) // Debugging log
+    setSelectedEstateId(estateId)
+    setIsDeleteModalOpen(true)
+  }
+  const handleDeleteEstate = async () => {
+    if (!selectedEstateId) {
+      console.error("No estate selected for deletion")
+      return
+    }
+
+    try {
+      const response = await fetch(`https://amd-backend-1.onrender.com/estate/estate/${selectedEstateId}/`, {
+        method: "DELETE",
+      })
+
+      if (!response.ok) {
+        throw new Error(`Failed to delete estate: ${response.statusText}`)
+      }
+
+      setIsDeleteModalOpen(false)
+      setNotification({ message: "Estate deleted successfully", type: "success" })
+
+      // Trigger page refresh or re-fetch data after delete
+      setTimeout(() => {
+        window.location.reload() // Refresh the page after notification
+      }, 1000) // Adjust the timeout as needed
+    } catch (error) {
+      console.error("Failed to delete estate:", error)
+      setNotification({ message: "Failed to delete estate", type: "error" })
+    }
+  }
+
   const paginatedData = filteredData.slice(0, itemsPerPage)
 
   const renderDropdownOptions = (index: number, row: any) => {
@@ -94,7 +132,12 @@ export default function CustomTable({ columns, data, showDropdown = true, tableT
         <div className="absolute right-0 z-10 mt-2 w-48 rounded-md bg-white shadow-lg">
           <div className="py-1">
             <button className="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100">Edit</button>
-            <button className="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100">Delete</button>
+            <button
+              onClick={() => handleDeleteClick(row.id)}
+              className="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"
+            >
+              Delete
+            </button>
           </div>
         </div>
       )
@@ -248,6 +291,16 @@ export default function CustomTable({ columns, data, showDropdown = true, tableT
           onClose={() => setIsMaintenanceModalOpen(false)}
           receiptData={selectedReceiptData}
         />
+      )}
+
+      <DeleteModal
+        isOpen={isDeleteModalOpen}
+        onClose={() => setIsDeleteModalOpen(false)}
+        onDelete={handleDeleteEstate}
+      />
+
+      {notification && (
+        <Notification message={notification.message} type={notification.type} onClose={() => setNotification(null)} />
       )}
     </div>
   )
