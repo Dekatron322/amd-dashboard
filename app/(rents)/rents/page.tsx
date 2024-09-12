@@ -202,7 +202,7 @@ export default function Dashboard() {
                       onClick={() => setIsModalOpen(true)}
                       className="button-rounded flex items-center gap-2 rounded-md"
                     >
-                      <p className="max-sm:hidden">Add new Estate</p>
+                      <p className="max-sm:hidden">Add nsew Estate</p>
                       <Image src="DashboardImages/Vector.svg" width={11.88} height={11.88} alt="" />
                     </button>
                   </div>
