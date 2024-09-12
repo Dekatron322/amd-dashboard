@@ -216,7 +216,7 @@ export default function Dashboard() {
                     onPageChange={setCurrentPage}
                   />
 
-                  <AddEstateModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onSave={handleAddEstate} />
+                  {/* <AddEstateModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onSave={handleAddEstate} /> */}
                 </div>
               </div>
             </div>
